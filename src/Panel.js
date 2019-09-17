@@ -1,4 +1,5 @@
 import React from "react";
+import Who from "./Who";
 
 export default function Panel(props) {
   return (
@@ -25,7 +26,7 @@ export default function Panel(props) {
           >
             {props.trendList.map((x, i) => {
               return (
-                <div class="card-body">
+                <div class="card-body" style={{marginTop: '-1em'}}>
                   <h5 class="card-title">{x.hashtag}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">
                     {x.tweets} tweets
@@ -54,20 +55,7 @@ export default function Panel(props) {
           >
             {props.follows.map((x, i) => {
               return (
-                <div class="media">
-                  <img src={x.avatar} class="mr-3" alt="..." />>
-                  <div class="media-body">
-                    <h5 class="mt-0">
-                      {x.first_name} {x.last_name}
-                    </h5>
-                    <div class="d-flex justify-content-between">
-                      <div className="p-2">
-                        <a href="google.com">{x.nick}</a>
-                      </div>
-                    </div>
-                    <hr />
-                  </div>
-                </div>
+                  <Who avatar={x.avatar} first_name={x.first_name} last_name={x.last_name} nick={x.nick} />
               );
             })}
             <a style={{ margin: "0em 2em " }} href="google.com">
